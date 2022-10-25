@@ -1,0 +1,11 @@
+.home {
+    min-height: 80vh;
+    background: url('../../assets/home-bg.jpg') no-repeat center;     
+    background-size: contain;
+}
+
+@media only screen and (max-width: 1024px) {
+    .home {
+        min-height: 65vh;
+    }
+}
