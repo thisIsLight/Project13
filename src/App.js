@@ -6,14 +6,15 @@ import Header from './components/header/Header'
 function App() {
   return (
     <React.Fragment>
-        <Router>
+        {/* <Router>
           <Header></Header>
           <Routes>
               <Route path="/Project13/" element={<Home />} />
           </Routes>
-        </Router>
+        </Router> */}
+        <Header></Header>
+        <Home />
     </React.Fragment>
-    
   );
 }
 
