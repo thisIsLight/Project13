@@ -9,7 +9,7 @@ function App() {
         <Router>
           <Header></Header>
           <Routes>
-              <Route path="/Project13" element={<Home />} />
+              <Route path="/Project13/" element={<Home />} />
           </Routes>
         </Router>
     </React.Fragment>
