@@ -1,3 +1,4 @@
+/* home div style */
 .home {
     min-height: 80vh;
     background: url('../../assets/home-bg.jpg') no-repeat center;     
@@ -7,5 +8,69 @@
 @media only screen and (max-width: 1024px) {
     .home {
         min-height: 65vh;
+    }
+}
+
+
+/* home disclaimer text style */
+
+.home-disclaimer-text-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.disclaimer-text-body{
+    margin: 0px;
+}
+
+.safari-font{
+    font-family: 'SignPainter-HouseScript';
+    padding-top: 151px;
+    padding-left: 649px;
+    padding-right: 679px;
+    font-size: 23px;
+}
+
+.other-browser-font{
+    font-family: 'Segoe Script';
+    padding-top: 151px;
+    padding-left: 649px;
+    padding-right: 679px;
+    font-size: 23px;
+}
+
+.play-now{
+    color:blue !important;
+    background-color: white;
+}
+
+@media only screen and (max-width: 756px) {
+    .home-disclaimer-text-box{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .disclaimer-text-body{
+        margin: 0px;
+    }
+
+    .safari-font{
+        font-family: 'SignPainter-HouseScript';
+        padding-top: 70px;
+        padding-left: 100px;
+        padding-right: 132px;
+        font-size: 21px;
+    }
+
+    .other-browser-font{
+        font-family: 'Segoe Script';
+        padding-top: 117px;
+        padding-left: 93px;
+        padding-right: 128px;
+        font-size: 15px;
+    }
+
+    .play-now{
+        color:blue !important;
     }
 }
