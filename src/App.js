@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import Home from './pages/home/Home';
-import Header from './components/header/Header'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 
@@ -9,8 +9,14 @@ function App() {
   }, []);
   return (
     <React.Fragment>
-        <Header></Header>
-        <Home />
+        <BrowserRouter>
+          <Routes>
+              <Route path="/Project13" element={<Home />} />
+              <Route path="/Project13/" element={<Home />} />
+              <Route path="/Project13/" element={<Home />} />
+              <Route path="/Project13/AboutUs" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
     </React.Fragment>
   );
 }

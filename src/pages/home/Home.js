@@ -1,7 +1,15 @@
 import "./Home.css"
+import Layout from '../layout/Layout'
+import HomePageConstants from '../../constants/homepage';
+import React from 'react';
+import ModalComponent from "../../components/modalcomponent/ModalComponent";
+import Alert from 'react-bootstrap/Alert';
 
 const Home = () => {
 
+    const [modalShow, setModalShow] = React.useState(false);
+    const [showAlert, setshowAlert] = React.useState(false);
+    const [name, setName] = React.useState(``);
     var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     var textBodyClassName = "";
     var playNowText = "Play now >>";
@@ -13,21 +21,30 @@ const Home = () => {
     }
 
     const onPlayNowHandler = () => {
-
+        setModalShow(true)
     }
 
+    const onHide = () => {
+        setModalShow(false)
+    }
 
+    const acceptHandler = (name) => {
+        setName(name);
+        setshowAlert(true);
+        onHide();
+    }
 
     return (
-        <div className="home">
-            <div className="home-disclaimer-text-box">
-                <p className={textBodyClassName}>Hey bird,<br/>
-                We believe that one's birthday should be so excited that they forget the pain of getting old. 
-                This is a small project which helps you go on a roller coaster ride and the dopamine rush will make your day. 
-                Beware, the clues may surprise you !!<br/><br/>
-                <span className="play-now" onClick={onPlayNowHandler}>{playNowText}</span></p>
+        <Layout>
+            <div className="home">
+                <div className="home-disclaimer-text-box">
+                    <p className={textBodyClassName}>{HomePageConstants.salutationtext}<br/>{HomePageConstants.textbody}<br/>
+                    <span className="play-now" onClick={onPlayNowHandler}>{playNowText}</span></p>
+                </div>
             </div>
-        </div>
+            <ModalComponent show={modalShow} hide={onHide} modaldata={HomePageConstants.modaldata} acceptHandler={acceptHandler}/>
+            {showAlert && <Alert variant="danger">{name}</Alert>}
+        </Layout>
     );
 }
 
