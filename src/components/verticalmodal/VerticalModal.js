@@ -7,13 +7,35 @@ import InputGroup from 'react-bootstrap/InputGroup';
 function VerticalModal(props) {
 
     const [name, setName] = useState('');
+    const [buttonState, setButtonState] = useState(true);
+    const [buttonText, setButtonText] = useState('Locked🔒');
 
     const onNameChange = (event) => {
-        setName(event.target.value);
+        if(props.ishome === "true"){
+            setButtonState(false)
+            if(event.target.value === ''){
+                setButtonState(true)
+            }
+            setName(event.target.value);
+        }
+        else{
+            if(event.target.value === 'Mango' || event.target.value === 'mango' || event.target.value === 'Mangoes' || event.target.value === 'mangoes'){
+                setButtonState(false)
+                setButtonText('Unlocked🔓')
+            }
+            else{
+                setButtonState(true)
+                setButtonText('Locked🔒')
+            }
+        }
     }
 
     const letsGoHandler = () =>{
-        props.acceptHandler(name)
+        props.accepthandler(name)
+    }
+
+    const submitHandler = () =>{
+        props.accepthandler()
     }
 
     return (
@@ -36,13 +58,14 @@ function VerticalModal(props) {
         </Modal.Body>
         <Modal.Footer>
             <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1">👶</InputGroup.Text>
+                <InputGroup.Text id="basic-addon1">{props.modaldata.modalfootericon}</InputGroup.Text>
                 <Form.Control
                     onChange={onNameChange}
-                    placeholder="Your name"
+                    placeholder={props.modaldata.modalfooterplaceholder}
                 />
             </InputGroup>
-            <Button onClick={letsGoHandler}>Lets Go ?</Button>
+            {props.ishome==="true" && <Button onClick={letsGoHandler} disabled={buttonState} >Lets Go ?</Button>}
+            {props.ishome==="false" && <Button onClick={submitHandler} disabled={buttonState} >{buttonText}</Button>}
         </Modal.Footer>
         </Modal>
     );

@@ -1,0 +1,28 @@
+@import url('https://fonts.google.com/specimen/Rubik');
+
+.story-title-texts{
+    font-family: 'Rubik';
+    font-style: italic;
+    font-size: 28px;
+    color: #d52020;
+}
+.story-header{
+    border-color: aqua;
+}
+
+
+.story-body{
+    background: url('../../assets/story-bg.jpg') no-repeat center;
+    background-size: fit;
+}
+
+.story-body-text{
+    font-size: 20px;
+    font-style: italic;
+    color: navy;
+}
+.story-button{
+    background: url('../../assets/button-bg.png') no-repeat center;
+    background-size: fit;
+    border-color: black !important;
+}

@@ -8,7 +8,8 @@ const HomePageConstants = {
         modalbodyheader: `Rules `,
         modalbodycontent:`Inorder to start the game, you need to answer one question correctly. This question kicks off your treasure hunt and a storm awaits you in the clues.
         Gool Luck !!!`,
-        modalfootercontent:``
+        modalfootericon:`👶`,
+        modalfooterplaceholder:'Your Name'
     }
 }
 
