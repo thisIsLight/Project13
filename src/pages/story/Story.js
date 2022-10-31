@@ -9,12 +9,14 @@ import "./Story.css"
 import StoryPageConstants from "../../constants/storypage";
 import ModalComponent from "../../components/modalcomponent/ModalComponent";
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 
 
 
 const Story = () => {
 
     const [modalShow, setModalShow] = React.useState(false);
+    const navigate = useNavigate();
 
     const onHide = () => {
         setModalShow(false)
@@ -26,6 +28,7 @@ const Story = () => {
 
     const acceptHandler = () => {
         localStorage.setItem('clueStatus', JSON.stringify(2));
+        navigate('/Project13/Clue2');
     }
 
     return (
